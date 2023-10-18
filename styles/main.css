@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+    --c1: #35e2c3; 	
+	--c2: #14d0f0; 	
+	--c3: #7f73ff; 	
+	--c4: #ff83c3; 	
+	--c5: #ffe552;
+
+	--s1 :#c1b5b5;
+
+    --roboto: 'Roboto', sans-serif;
+}
+
+body {
+	margin: 0;
+	width: 100vw;
+	height: fit-content;
+	
+}
+
+html {
+	font-family: var(--roboto);
+}
+
+.black {
+	color: black;
+}
+
+.black-bg {
+	background-color: black;
+}
+
+.blue {
+	color: var(--c2);
+}
+
+.blue-bg {
+	background-color: var(--c2);
+}
+
+.green {
+	color: var(--c1);
+}
+
+.green-bg {
+	background-color: var(--c1);
+}
+
+.pink {
+	color: var(--c4);
+}
+
+.pink-bg {
+	background-color: var(--c4);
+}
+
+.purple {
+	color: var(--c3);
+}
+
+.purple-bg {
+	background-color: var(--c3);
+}
+
+.white {
+	color: white;
+}
+
+.white-bg {
+	background-color: white;
+}
+
+.yellow {
+	color: var(--c5);
+}
+
+.yellow-bg {
+	background-color: var(--c5);
+}
+
+.grad-1 {
+	background: linear-gradient(
+		to bottom,
+		var(--c5) 30%,
+		var(--c2) 40%,
+		var(--c1) 100%
+	);
+}
+
+.grad-2 {
+	background: linear-gradient(
+		to bottom,
+		var(--c1) 30%,
+		var(--c3) 40%,
+		var(--c4) 100%
+	);
+}
+
+.grad-3 {
+	background: linear-gradient(
+		to bottom,
+		var(--c4) 30%,
+		var(--c5) 40%,
+		var(--c2) 100%
+	);
+}
+
+.grad-4 {
+	background: linear-gradient(
+		to bottom,
+		var(--c1) 70%,
+		var(--c5) 100%
+	);
+}
+
+.grad-5 {
+	background: linear-gradient(
+		to bottom,
+		var(--c2) 30%,
+		var(--c3) 40%,
+		var(--c4) 100%
+	);
+}
+
+
+.main-container {
+	width: 100vw;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+}
+
+.full-row {
+	display: flex;
+	flex-direction: row;
+	max-width: 100vw;
+	height: fit-content;
+	padding: 1vh 1vw;
+	column-gap: 2vw;
+	justify-content: center;
+}
+
+.grid-sub {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 40vw;
+	min-height: 40vw;
+	height: fit-content;
+	border-radius: 15px;
+	align-items: center;
+	padding: 1vh 0vw;
+	row-gap: 1vh;
+}
+
+.grid-item {
+	display: flex;
+	flex-direction: column;
+	width: 18vw;
+	height: 18vw;
+	justify-self: center;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	font-size: 2vmin;
+}
+
+.grid-item:active {
+	transform: translateY(2px);
+}
+
+.interactable:hover {
+	cursor: pointer;
+	border: 5px solid black;
+	transition: 0.25s linear;
+}
+
+.large-note {
+	width: 38vw;
+	height: 38vw;
+	display: flex;
+	flex-direction: column;
+	border-radius: 15px;
+	padding: 2vw 2vw;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+	font-size: 1.8vmin;
+	align-items: center;
+}
+
+.large-note img {
+	width: 15vw;
+	align-self: center;
+	margin: 1vh 1vw;
+	box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.large-text-box {
+	max-width: 100vw;
+	height: fit-content;
+	display: block;
+	margin: 0vh 2vw;
+	font-size: large;
+}
+

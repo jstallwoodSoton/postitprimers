@@ -1,89 +1,115 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="./styles/main.css">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <link rel="stylesheet" href="./math.css">
-        <script src="./latexcopy.js"></script>
+        <script src="./postit-demo.js"></script>
     </head>
     <body>
-        <div class="notepage">
-            <div class="area">
-                <h1>Sums of Powers</h1>
-                <img src="./img/pascal.JPG">
+        <div class="main-container">
+            <div class="full-row grad-4">
+                <img src="./img/pp.png">
+                <h1>Postit Primers: An Overview</h1>
             </div>
-            
-            <div class="area">
-                <h2>General Formula</h2>
-                <div class="math" data-postit="definition">
-                    $$ a\sum_{x = 1}^{n}x^{(a - 1)} = \begin{cases} a = 1 \rightarrow (n + 1)^a - 1 \\ a \ge 2 \rightarrow (n + 1)^a - 1 - \sum_{k = 0}^{a - 2}\binom{a}{k}\sum_{x = 1}^{n} x^k \end{cases}$$
-                </div>
-                $$ \forall (a, n) \in \mathbb{N}$$
-            </div>
-            <div class="area">
-                <h2>Derivation</h2>
-                <div class="math" data-postit="proof">
-                    $$ \sum_{x = 1}^{n} (x + 1)^{a} = \sum_{x = 1}^{n} \sum_{k = 0}^{a} \binom{a}{k}x^{k} $$
-                    $$ \sum_{x = 1}^{n} (x + 1)^{a} = \sum_{x = 1}^{n} \left(\binom{a}{0}x^0 + \binom{a}{1}x^1 + ... + \binom{a}{a - 1}x^{(a - 1)} + \binom{a}{a}x^a \right) $$
-                    $$ \sum_{x = 1}^{n} (x + 1)^{a} = \binom{a}{0}\sum_{x = 1}^{n}x^0 + \binom{a}{1}\sum_{x = 1}^{n}x^1 + ... + \binom{a}{a - 1}\sum_{x = 1}^{n}x^{(a - 1)} + \binom{a}{a}\sum_{x = 1}^{n}x^a $$
-                    $$ \sum_{x = 1}^{n} (x + 1)^{a} - \binom{a}{a}\sum_{x = 1}^{n}x^a = \binom{a}{0}\sum_{x = 1}^{n}x^0 + \binom{a}{1}\sum_{x = 1}^{n}x^1 + ... + \binom{a}{a - 1}\sum_{x = 1}^{n}x^{(a - 1)} $$<br>
-                    $$ \sum_{x = 1}^{n} (x + 1)^{a} - \binom{a}{a}\sum_{x = 1}^{n}x^a = 2^a + 3^a + ... + n^a + (n + 1)^a - 1^a - 2^a - ... - (n - 1)^a - n^a$$
-                    $$ \sum_{x = 1}^{n} (x + 1)^{a} - \binom{a}{a}\sum_{x = 1}^{n}x^a = (n + 1)^a - 1$$<br>
-                    $$ (n + 1)^a - 1 = \binom{a}{0}\sum_{x = 1}^{n}x^0 + \binom{a}{1}\sum_{x = 1}^{n}x^1 + ... + \binom{a}{a - 1}\sum_{x = 1}^{n}x^{(a - 1)} $$
-                    $$ \binom{a}{a - 1}\sum_{x = 1}^{n}x^{(a - 1)} = (n + 1)^a - 1 - \binom{a}{0}\sum_{x = 1}^{n}x^0 - \binom{a}{1}\sum_{x = 1}^{n}x^1 - ... - \binom{a}{a - 2}\sum_{x = 1}^{n}x^{(a - 2)} $$<br>
-                    <div class="attention" id="d1">$$ a\sum_{x = 1}^{n}x^{(a - 1)} = \begin{cases} a = 1 \rightarrow (n + 1)^a - 1 \\ a \ge 2 \rightarrow (n + 1)^a - 1 - \sum_{k = 0}^{a - 2}\binom{a}{k}\sum_{x = 1}^{n} x^k \end{cases}$$</div>
+            <div class="full-row yellow-bg">
+                <div class="large-text-box">
+                    <p>Postit Primers are short, sticky note sized, and easy to digest primers of important information.</p>
+                    <p>Color coded to point students to the appropriate level of information needed for any lesson, they facilitate directed learning using systems already familiar to most.</p>
+                    <p>Postit Primers demand that instructors be concise and get their points across in as few words as possible.</p>
+                    <p>However, they also have the benefit of being easy to reference when directing students' learning:</p><br>
+                    <p style="text-align: center;"><b>"This week's homework, familiarize yourselves with Eigenvalues Definition, and Eigenvalues Proofs 1-4."</b></p>
                 </div>
             </div>
-            <div class="area">
-                <h2>Let \(a = 1\)</h2>
-                <div class="math" data-postit="application">
-                    $$ \sum_{x = 1}^{n}x^{0} = (n + 1)^1 - 1 $$
-                    $$ \sum_{x = 1}^{n}x^{0} = n + 1 - 1; \text{ thus: } $$
-                    <div class="attention">$$ \sum_{x = 1}^{n}x^{0} = n$$</div>
+            <div class="full-row grad-1">
+                <div class="grid-sub white-bg">
+                    <div class="grid-item blue-bg interactable" onclick="displayInformation('displayCard', 'note_descriptions', 0, 'blue-bg')">
+                        <h1>Definition</h1>
+                    </div>
+                    <div class="grid-item green-bg interactable" onclick="displayInformation('displayCard', 'note_descriptions', 1, 'green-bg')">
+                        <h1>Explanation</h1>
+                    </div>
+                    <div class="grid-item pink-bg interactable" onclick="displayInformation('displayCard', 'note_descriptions', 2, 'pink-bg')">
+                        <h1>Proof</h1>
+                    </div>
+                    <div class="grid-item yellow-bg interactable" onclick="displayInformation('displayCard', 'note_descriptions', 3, 'yellow-bg')">
+                        <h1>Application</h1>
+                    </div>
                 </div>
+                <div class="large-note white-bg" id="displayCard"></div>
             </div>
-            <div class="area">
-                <h2>Let \(a = 2\)</h2>
-                <div class="math" data-postit="application">
-                    $$ 2\sum_{x = 1}^{n}x^{1} = (n + 1)^2 - 1 - \sum_{k = 0}^{0}\binom{2}{k}\sum_{x = 1}^{n} x^k$$
-                    $$ 2\sum_{x = 1}^{n}x^{1} = (n + 1)^2 - 1 - \sum_{x = 1}^{n} x^0$$
-                    $$ 2\sum_{x = 1}^{n}x^{1} = n^2 + 2n + 1 - 1 - n$$
-                    $$ 2\sum_{x = 1}^{n}x^{1} = n^2 + n; \text{ thus: }$$
-                    <div class="attention">$$ \sum_{x = 1}^{n}x^{1} = \frac{n^2 + n}{2} = \frac{n(n + 1)}{2}$$</div>
+            <div class="full-row green-bg">
+                <h1>Here are some examples...</h1>
+            </div>
+            <div class="full-row grad-2">
+                <div class="grid-sub white-bg">
+                    <div class="grid-item blue-bg interactable" onclick="displayInformation('displayCardB', 'binom', 0, 'blue-bg')">
+                        <h1>Binomial Theorem</h1>
+                    </div>
+                    <div class="grid-item pink-bg interactable" onclick="displayInformation('displayCardB', 'binom', 1, 'pink-bg')">
+                        <h1>Binomial Theorem</h1>
+                        <h1>1</h1>
+                    </div>
+                    <div class="grid-item pink-bg interactable" onclick="displayInformation('displayCardB', 'binom', 2, 'pink-bg')">
+                        <h1>Binomial Theorem</h1>
+                        <h1>2</h1>
+                    </div>
+                    <div class="grid-item pink-bg interactable" onclick="displayInformation('displayCardB', 'binom', 3, 'pink-bg')">
+                        <h1>Binomial Theorem</h1>
+                        <h1>3</h1>
+                    </div>
+                    <div class="grid-item yellow-bg interactable" onclick="displayInformation('displayCardB', 'binom', 4, 'yellow-bg')">
+                        <h1>Binomial Theorem</h1>
+                        <h1>1</h1>
+                    </div>
                 </div>
+                <div class="large-note white-bg" id="displayCardB"></div>
             </div>
-            <div class="area">
-                <h2>Let \(a = 3\)</h2>
-                <div class="math" data-postit="application">
-                    $$ 3\sum_{x = 1}^{n}x^{2} = (n + 1)^3 - 1 - \sum_{k = 0}^{1}\binom{3}{k}\sum_{x = 1}^{n} x^k $$
-                    $$ 3\sum_{x = 1}^{n}x^{2} = (n + 1)^3 - 1 - \binom{3}{0}\sum_{x = 1}^{n} x^0 - \binom{3}{1}\sum_{x = 1}^{n} x^1 $$
-                    $$ 3\sum_{x = 1}^{n}x^{2} = n^3 + 3n^2 + 3n + 1 - 1 - n - 3\left(\frac{n^2 + n}{2}\right) $$
-                    $$ 3\sum_{x = 1}^{n}x^{2} = n^3 + 3n^2 + 3n + 1 - 1 - n - \frac{3n^2 - 3n}{2} $$
-                    $$ 6\sum_{x = 1}^{n}x^{2} = 2n^3 + 3n^2 + n; \text{ thus: } $$
-                    <div class="attention">$$ \sum_{x = 1}^{n}x^{2} = \frac{2n^3 + 3n^2 + n}{6} = \frac{(2n + 1)n(n + 1)}{6} = \frac{(2n + 1)}{3}\sum_{x = 1}^{n}x$$ </div>
+            <div class="full-row grad-3">
+                <div class="grid-sub white-bg">
+                    <div class="grid-item blue-bg interactable" onclick="displayInformation('displayCardC', 'basel', 0, 'blue-bg')">
+                        <h1>Basel Problem</h1>
+                    </div>
+                    <div class="grid-item green-bg interactable" onclick="displayInformation('displayCardC', 'basel', 1, 'green-bg')">
+                        <h1>Basel Problem</h1>
+                    </div>
+                    <div class="grid-item pink-bg interactable" onclick="displayInformation('displayCardC', 'basel', 2, 'pink-bg')">
+                        <h1>Basel Problem</h1>
+                        <h1>1</h1>
+                    </div>
+                    <div class="grid-item pink-bg interactable" onclick="displayInformation('displayCardC', 'basel', 3, 'pink-bg')">
+                        <h1>Basel Problem</h1>
+                        <h1>2</h1>
+                    </div>
+                    <div class="grid-item pink-bg interactable" onclick="displayInformation('displayCardC', 'basel', 4, 'pink-bg')">
+                        <h1>Basel Problem</h1>
+                        <h1>3</h1>
+                    </div>
                 </div>
+                <div class="large-note white-bg" id="displayCardC"></div>
             </div>
-            <div class="area">
-                <h2>Let \(a = 4\)</h2>
-                <div class="math" data-postit="application">
-                    $$ 4\sum_{x = 1}^{n}x^{3} = (n + 1)^4 - 1 - \sum_{k = 0}^{2}\binom{4}{k}\sum_{x = 1}^{n} x^k $$
-                    $$ 4\sum_{x = 1}^{n}x^{3} = n^4 + 4n^3 + 6n^2 + 4n - \sum_{x = 1}^{n} x^0 - 4\sum_{x = 1}^{n} x^1 - 6\sum_{x = 1}^{n} x^2$$
-                    $$ 4\sum_{x = 1}^{n}x^{3} = n^4 + 4n^3 + 6n^2 + 3n - 4\left(\frac{n^2 + n}{2}\right) - 6\left(\frac{2n^3 + 3n^2 + n}{6}\right)$$
-                    $$ 4\sum_{x = 1}^{n}x^{3} = n^4 + 2n^3 + n^2; \text{ thus: } $$
-                    <div class="attention">$$ \sum_{x = 1}^{n}x^{3} = \frac{n^4 + 2n^3 + n^2}{4} = \frac{n^2(n + 1)^2}{4} = \left( \frac{n(n + 1)}{2}\right)^2 = \left(\sum_{x = 1}^{n}x \right)^2 $$</div>
+            <div class="full-row blue-bg">
+                <h1>They can even be embedded with multimedia</h1>
+            </div>
+            <div class="full-row grad-5">
+                <div class="grid-sub white-bg">
+                    <div class="grid-item blue-bg interactable" onclick="displayInformation('displayCardD', 'bezier', 0, 'blue-bg')">
+                        <h1>Bezier Curves</h1>
+                    </div>
+                    <div class="grid-item yellow-bg interactable" onclick="displayInformation('displayCardD', 'bezier', 1, 'yellow-bg')">
+                        <h1>Bezier Curves</h1>
+                        <h1>1</h1>
+                    </div>
+                    <div class="grid-item yellow-bg interactable" onclick="displayInformation('displayCardD', 'bezier', 2, 'yellow-bg')">
+                        <h1>Bezier Curves</h1>
+                        <h1>2</h1>
+                    </div>  
                 </div>
+                <div class="large-note white-bg" id="displayCardD"></div>
             </div>
-            <div class="area">
-                <h2>Let \(a = 5\)</h2>
-                <div class="math" data-postit="application">
-                    $$ 5\sum_{x = 1}^{n}x^{4} = (n + 1)^5 - 1 - \sum_{k = 0}^{3}\binom{5}{k}\sum_{x = 1}^{n} x^k $$
-                    $$ 5\sum_{x = 1}^{n}x^{4} = (n + 1)^5 - 1 - \binom{5}{0}\sum_{x = 1}^{n} x^0 - \binom{5}{1}\sum_{x = 1}^{n} x^1 - \binom{5}{2}\sum_{x = 1}^{n} x^2 - \binom{5}{3}\sum_{x = 1}^{n} x^3 $$  
-                    $$ 5\sum_{x = 1}^{n}x^{4} = n^5 + 5n^4 + 10n^3 + 10n^2 + 4n - 5\left( \frac{n^2 + n}{2}\right) - 10\left(\frac{2n^3 + 3n^2 + n}{6}\right) - 10\left(\frac{n^4 + 2n^3 + n^2}{4}\right) $$
-                    $$ 5\sum_{x = 1}^{n}x^{4} = n^5 + 5n^4 + 10n^3 + 10n^2 + 4n - \frac{5n^2 - 5n}{2} - 10\left(\frac{2n^3 + 3n^2 + n}{6}\right) - \frac{5n^4 - 10n^3 - 5n^2}{2} $$
-                    $$ 10\sum_{x = 1}^{n}x^{4} = 2n^5 + 5n^4 + 10n^3 + 10n^2 + 3n - 20\left(\frac{2n^3 + 3n^2 + n}{6}\right) $$
-                    $$ 10\sum_{x = 1}^{n}x^{4} = 2n^5 + 5n^4 + 10n^3 + 10n^2 + 3n - \frac{20n^3 - 30n^2 - 10n}{3} $$
-                    $$ 30\sum_{x = 1}^{n}x^{4} = 6n^5 + 15n^4 + 10n^3 - n; \text{ thus: } $$
-                    <div class="attention">$$ \sum_{x = 1}^{n}x^{4} = \frac{6n^5 + 15n^4 + 10n^3 - n}{30} = \frac{n(n^4 - 1) + 5n^3(n + 2)(n + 1)}{30}$$</div>
+            <div class="full-row pink-bg" style="justify-content: end;">
+                <div class="large-text-box">
+                    <p class="white" style="text-align: right;">Dr. James Stallwood, School of Mathematical Sciences, University of Southampton, UK.</p>
                 </div>
             </div>
         </div>
