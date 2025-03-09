@@ -1,0 +1,103 @@
+html, body { 
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.header-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 15vh;
+}
+
+.main-cont { 
+    display: flex;
+    flex-direction: row;
+    width: 95vw;
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 46vw;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1vw;
+}
+
+.left h1 {
+    font-size: 10vmin;
+    text-align: center;
+}
+
+.right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 110%;
+    width: 48vw;
+    height: 46vw;
+    column-gap: 1vmin;
+    row-gap: 1vmin;
+    overflow-y: scroll;
+}
+
+.right * {
+    font-size: inherit;
+}
+
+.definition {
+    background-color: rgb(117, 174, 192);
+}
+
+.example {
+    background-color: rgb(72, 184, 94);
+}
+
+.proof {
+    background-color: rgb(183, 72, 178);
+}
+
+.postit {
+    display: flex;
+    flex-direction: column;
+    width: 23vw;
+    height: 20vw;
+    text-align: start;
+    align-items: center;
+    overflow: scroll;
+}
+
+.postit p {
+    padding-left: 1vmin;
+}
+
+.number {
+    text-align: end;
+    align-self: flex-end;
+    margin-right: 1vmin;
+    font-weight: bolder;
+}

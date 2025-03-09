@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PostitPrimer-Ex: Mappings & Functions</title>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="./p5/p5.js"></script>
+
+        <link rel="stylesheet" href="./postit.css">
+    </head>
+    <body>
+        <div class="header-menu">
+            <input type="checkbox" value="0" name="mode" id="darkmode">
+            <label for="darkmode">Dark mode</label>
+        </div>
+        <div class="main-cont">
+            <div class="left">
+                <h1>Mappings & Functions</h1>
+            </div>
+            <div class="right">
+                <div class="postit definition">
+                    <p class="number">D1</p>
+                    <p>\(f:S \rightarrow T\)</p>
+                    <p><b>(mapping):(domain)</b>\(\rightarrow\)<b>(codomain)</b></p>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D2</p>
+                    <p>\((S\neq \varnothing \land T \neq \varnothing) \implies\)</p>
+                    <p>\(f \subset S \times T:\forall s \in S, \exists!t \in T\)</p>
+                    <p>\((s, t) \in f\)</p>
+                </div>
+                <div class="postit example">
+                    <p class="number">E1</p>
+                    <p>\(f:\mathbb{Q}_{>0}\rightarrow \mathbb{Z}\times\mathbb{Z}\)</p>
+                    <p>\(s = \frac{m}{n}, t = (m, n) \iff s \mapsto t\)</p>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D3</p>
+                    <p>\(f:S\rightarrow T\) is <b>one-to-one</b></p>
+                    <p>\(s_{i} \neq s_{j} \iff f(s_{i}) \neq f(s_{j})\)</p>
+                    <p>\(\forall s_{i}, s_{j} \in S\)</p>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D4</p>
+                    <p>\(f:S\rightarrow T \quad g:S\rightarrow T\)</p>
+                    <p>\((\forall s \in S)[f(s) = g(s)] \implies f = g\)</p>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D5</p>
+                    <p>\(f:S\rightarrow T \quad g:T\rightarrow U\)</p>
+                    <p>\(f\circ g:S \rightarrow U\)</p>
+                    <p>\((f\circ g)(s) = g(f(s))\)</p>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D6</p>
+                    <p>\(f:S\rightarrow T \quad g:T\rightarrow U\)</p>
+                    <p>\(h:U\rightarrow V\)</p>
+                    <p>\((f\circ g)\circ h = f\circ(g\circ h)\)</p>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D7</p>
+                    <p>Let \(S \neq \varnothing\)</p>
+                    <p>\(A(S) := \{f\mid f:S\rightarrow S\}\)</p>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D8</p>
+                    <p>Let \(\alpha, \beta, \gamma \in A(S)\):</p>
+                    <ul>
+                        <li>\(\alpha \circ \beta \in A(S)\)</li>
+                        <li>\((\alpha \circ \beta)\circ \gamma = \alpha \circ (\beta \circ \gamma)\)</li>
+                        <li>\(\exists! \iota \in A(S): \alpha\circ\iota = \iota\circ\alpha = \alpha\)</li>
+                        <li>\(\exists! \alpha^{-1} \in A(S): \alpha\circ\alpha^{-1} = \alpha^{-1}\circ\alpha = \iota\)</li>
+                    </ul>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D9</p>
+                    <p>Let \(f:\mathbb{R}^{n}\rightarrow \mathbb{R}\)</p>
+                    <p>Where \(n \in \mathbb{Z}_{>0}\)</p>
+                    <p>Let \(x_{1}, x_{2} \in \mathbb{R}^{n}: x_{1} \neq x_{2}\)</p>
+                    <p>Let \(\lambda \in [0, 1]\)</p>
+                </div>
+                <div class="postit definition">
+                    <p class="number">D10</p>
+                    <p>\(f\) is <b>convex</b> iff:</p>
+                    <p>\(f(\lambda x_{1} + (1 - \lambda)x_{2}) \le\)</p>
+                    <p>\(\lambda f(x_{1}) + (1 - \lambda)f(x_{2})\)</p>
+                    <p>\(\forall x_{1}, x_{2} \in \mathbb{R}^{n}\)</p>
+                </div>
+                <div class="postit" id="sketch"></div>
+            </div> 
+        </div>
+        <script src="./postitlayout.js"></script>
+        <script src="./postitsketches.js"></script>
+    </body>
+</html>
